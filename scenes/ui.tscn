@@ -24,4 +24,8 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "YOU SMASNUG"
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "HOW TO"
