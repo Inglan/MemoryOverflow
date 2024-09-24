@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="MemoryOverflow"
-run/main_scene="res://scenes/level1.tscn"
+run/main_scene="res://scenes/ui.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
 
 [input]
 
