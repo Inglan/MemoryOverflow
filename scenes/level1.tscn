@@ -13,6 +13,8 @@ size = Vector2(500, 40)
 [node name="Player" parent="." instance=ExtResource("1_pxsnt")]
 position = Vector2(236, 132)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(465, 523)
 
