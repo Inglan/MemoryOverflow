@@ -1,6 +1,60 @@
-[gd_scene load_steps=2 format=3 uid="uid://mrxhcem63be5"]
+[gd_scene load_steps=6 format=3 uid="uid://mrxhcem63be5"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="3_bncij"]
+
+[sub_resource type="Animation" id="Animation_tsnyx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_urofd"]
+resource_name = "fadeincolor"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xx6uo"]
+resource_name = "fadeoutcolor"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vvxqf"]
+_data = {
+"RESET": SubResource("Animation_tsnyx"),
+"fadeincolor": SubResource("Animation_urofd"),
+"fadeoutcolor": SubResource("Animation_xx6uo")
+}
 
 [node name="ui" type="Control"]
 layout_mode = 3
@@ -10,6 +64,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_bncij")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
+root_node = NodePath("../..")
+autoplay = "fadeoutcolor"
+libraries = {
+"": SubResource("AnimationLibrary_vvxqf")
+}
 
 [node name="Title" type="Control" parent="."]
 layout_mode = 1
@@ -75,9 +148,9 @@ text = "Credits"
 
 [node name="Credits" type="Control" parent="."]
 layout_mode = 1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 2.0
+anchor_left = 1.0
+anchor_right = 2.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -120,6 +193,65 @@ grow_vertical = 0
 layout_mode = 2
 text = "Back"
 
+[node name="HowTo" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 1.0
+anchor_right = 2.0
+anchor_bottom = 1.0
+offset_left = -1152.0
+offset_top = 648.0
+offset_right = -1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HowTo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.5
+offset_top = -37.5
+offset_right = 243.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HowTo/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "How To Play"
+
+[node name="Label2" type="Label" parent="HowTo/VBoxContainer"]
+layout_mode = 2
+text = "TODO - ADD INSTRUCTIONS"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HowTo"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -48.0
+offset_right = 142.0
+offset_bottom = -8.0
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="HowTo/HBoxContainer"]
+layout_mode = 2
+text = "Back"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-script = ExtResource("3_bncij")
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
+
+[connection signal="animation_finished" from="CanvasLayer/ColorRect/AnimationPlayer" to="." method="animationfinished"]
+[connection signal="pressed" from="Title/VBoxContainer/HBoxContainer/Button" to="." method="play"]
+[connection signal="pressed" from="Title/VBoxContainer/HBoxContainer/Button2" to="." method="showhowto"]
+[connection signal="pressed" from="Title/HBoxContainer/Button" to="." method="showcredits"]
+[connection signal="pressed" from="Credits/HBoxContainer/Button" to="." method="back"]
+[connection signal="pressed" from="HowTo/HBoxContainer/Button" to="." method="back"]
