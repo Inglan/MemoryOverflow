@@ -195,13 +195,9 @@ text = "Back"
 
 [node name="HowTo" type="Control" parent="."]
 layout_mode = 1
-anchor_left = 1.0
-anchor_right = 2.0
-anchor_bottom = 1.0
-offset_left = -1152.0
-offset_top = 648.0
-offset_right = -1152.0
-offset_bottom = 648.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
