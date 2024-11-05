@@ -84,7 +84,7 @@ libraries = {
 }
 
 [node name="Player" parent="." instance=ExtResource("1_pxsnt")]
-position = Vector2(236, 132)
+position = Vector2(294, 136)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
