@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://mrxhcem63be5"]
+[gd_scene load_steps=7 format=3 uid="uid://mrxhcem63be5"]
 
+[ext_resource type="Texture2D" uid="uid://cws64ad4fqedo" path="res://logo.png" id="2_f8g5c"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="3_bncij"]
 
 [sub_resource type="Animation" id="Animation_tsnyx"]
@@ -66,6 +67,7 @@ grow_vertical = 2
 script = ExtResource("3_bncij")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -106,10 +108,10 @@ offset_bottom = 30.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Title/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Title/VBoxContainer"]
 layout_mode = 2
-text = "MemoryOverflow"
-horizontal_alignment = 1
+texture = ExtResource("2_f8g5c")
+expand_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Title/VBoxContainer"]
 layout_mode = 2
