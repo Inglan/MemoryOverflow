@@ -148,7 +148,7 @@ text = "By Ingo -"
 
 [node name="Button" type="Button" parent="Title/HBoxContainer"]
 layout_mode = 2
-text = "Credits"
+text = " Credits "
 
 [node name="Credits" type="Control" parent="."]
 layout_mode = 1
@@ -195,7 +195,7 @@ grow_vertical = 0
 
 [node name="Button" type="Button" parent="Credits/HBoxContainer"]
 layout_mode = 2
-text = "Back"
+text = " Back "
 
 [node name="HowTo" type="Control" parent="."]
 layout_mode = 1
@@ -241,7 +241,7 @@ grow_vertical = 0
 
 [node name="Button" type="Button" parent="HowTo/HBoxContainer"]
 layout_mode = 2
-text = "Back"
+text = " Back "
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
