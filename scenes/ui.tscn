@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://mrxhcem63be5"]
+[gd_scene load_steps=8 format=3 uid="uid://mrxhcem63be5"]
 
+[ext_resource type="Theme" uid="uid://du8oaaj8cjcxb" path="res://theme.tres" id="1_ei2l2"]
 [ext_resource type="Texture2D" uid="uid://cws64ad4fqedo" path="res://logo.png" id="2_f8g5c"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="3_bncij"]
 
@@ -64,6 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ei2l2")
 script = ExtResource("3_bncij")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
