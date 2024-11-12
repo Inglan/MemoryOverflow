@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://mrxhcem63be5"]
+[gd_scene load_steps=9 format=3 uid="uid://mrxhcem63be5"]
 
 [ext_resource type="Theme" uid="uid://du8oaaj8cjcxb" path="res://theme.tres" id="1_ei2l2"]
 [ext_resource type="Texture2D" uid="uid://cws64ad4fqedo" path="res://logo.png" id="2_f8g5c"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="3_bncij"]
+[ext_resource type="AudioStream" uid="uid://be2rk7jt7n0r5" path="res://sound/background.wav" id="4_pekhq"]
 
 [sub_resource type="Animation" id="Animation_tsnyx"]
 length = 0.001
@@ -247,6 +248,10 @@ anchor_mode = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 rotation_smoothing_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pekhq")
+autoplay = true
 
 [connection signal="animation_finished" from="CanvasLayer/ColorRect/AnimationPlayer" to="." method="animationfinished"]
 [connection signal="pressed" from="Title/VBoxContainer/HBoxContainer/Button" to="." method="play"]
