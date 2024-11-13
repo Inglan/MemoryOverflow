@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnf2ugmbtywek"
+path="res://.godot/imported/navigation_forward-selection-minimal.wav-859c87a64d87801e3ae52f8145df042d.sample"
+
+[deps]
+
+source_file="res://sound/material/03 Primary System Sounds/navigation_forward-selection-minimal.wav"
+dest_files=["res://.godot/imported/navigation_forward-selection-minimal.wav-859c87a64d87801e3ae52f8145df042d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

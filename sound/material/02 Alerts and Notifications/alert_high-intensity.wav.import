@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwk6it6iy8yhw"
+path="res://.godot/imported/alert_high-intensity.wav-e997736ed9fd5c009b447ac65d73154e.sample"
+
+[deps]
+
+source_file="res://sound/material/02 Alerts and Notifications/alert_high-intensity.wav"
+dest_files=["res://.godot/imported/alert_high-intensity.wav-e997736ed9fd5c009b447ac65d73154e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
