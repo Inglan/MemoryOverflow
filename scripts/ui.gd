@@ -11,14 +11,17 @@ func _process(delta):
 	pass
 
 func back():
+	$"Sound/navigation_backward-selection-minimal".play()
 	$Camera2D.position.y = $Title.position.y
 	$Camera2D.position.x = $Title.position.x
 
 func showcredits():
+	$"Sound/navigation_forward-selection-minimal".play()
 	$Camera2D.position.y = $Credits.position.y
 	$Camera2D.position.x = $Credits.position.x
 
 func showhowto():
+	$"Sound/navigation_forward-selection-minimal".play()
 	$Camera2D.position.y = $HowTo.position.y
 	$Camera2D.position.x = $HowTo.position.x
 
