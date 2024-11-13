@@ -254,9 +254,11 @@ rotation_smoothing_enabled = true
 
 [node name="navigation_backward-selection-minimal" type="AudioStreamPlayer" parent="Sound"]
 stream = ExtResource("4_peydm")
+volume_db = 20.0
 
 [node name="navigation_forward-selection-minimal" type="AudioStreamPlayer" parent="Sound"]
 stream = ExtResource("5_mi644")
+volume_db = 20.0
 
 [connection signal="animation_finished" from="CanvasLayer/ColorRect/AnimationPlayer" to="." method="animationfinished"]
 [connection signal="pressed" from="Title/VBoxContainer/HBoxContainer/Button" to="." method="play"]
