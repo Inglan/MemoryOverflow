@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvubimyiph22s"
+path="res://.godot/imported/notification_decorative-01.wav-20ad921eaf09fddf7dd9db9dd12b98ac.sample"
+
+[deps]
+
+source_file="res://sound/material/02 Alerts and Notifications/notification_decorative-01.wav"
+dest_files=["res://.godot/imported/notification_decorative-01.wav-20ad921eaf09fddf7dd9db9dd12b98ac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

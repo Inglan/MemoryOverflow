@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmvohnuqnir6l"
+path="res://.godot/imported/ui_loading.wav-081ab90927168f2bca3e52084f0f9c28.sample"
+
+[deps]
+
+source_file="res://sound/material/04 Secondary System Sounds/ui_loading.wav"
+dest_files=["res://.godot/imported/ui_loading.wav-081ab90927168f2bca3e52084f0f9c28.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

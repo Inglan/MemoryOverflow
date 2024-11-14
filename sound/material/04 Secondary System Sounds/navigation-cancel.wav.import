@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://babeie4nxcb1"
+path="res://.godot/imported/navigation-cancel.wav-45dfc34ba9eeeda98d655434bd374679.sample"
+
+[deps]
+
+source_file="res://sound/material/04 Secondary System Sounds/navigation-cancel.wav"
+dest_files=["res://.godot/imported/navigation-cancel.wav-45dfc34ba9eeeda98d655434bd374679.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
