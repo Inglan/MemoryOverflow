@@ -62,9 +62,10 @@ size = Vector2(500, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_488fx"]
 size = Vector2(500, 40)
 
-[node name="level1" type="Node2D"]
+[node name="game" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
