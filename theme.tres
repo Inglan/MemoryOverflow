@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://du8oaaj8cjcxb"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://du8oaaj8cjcxb"]
+
+[ext_resource type="FontFile" uid="uid://6g7um1mv7nbq" path="res://Inter/static/Inter_18pt-Light.ttf" id="1_shgt4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1t6y"]
 bg_color = Color(0, 0, 0, 1)
@@ -33,8 +35,11 @@ border_width_right = 1
 border_width_bottom = 1
 
 [resource]
+Button/fonts/font = ExtResource("1_shgt4")
 Button/styles/disabled = SubResource("StyleBoxFlat_h1t6y")
 Button/styles/focus = SubResource("StyleBoxFlat_q11pw")
 Button/styles/hover = SubResource("StyleBoxFlat_yurmc")
 Button/styles/normal = SubResource("StyleBoxFlat_dq1sj")
 Button/styles/pressed = SubResource("StyleBoxFlat_vvm2r")
+Label/fonts/font = ExtResource("1_shgt4")
+LineEdit/fonts/font = ExtResource("1_shgt4")
