@@ -30,7 +30,7 @@ func play():
 	await get_tree().create_timer(0.1).timeout
 	$CanvasLayer/ColorRect/AnimationPlayer.play("fadeincolor")
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://scenes/level1.tscn")
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func animationfinished(anim_name):
 	pass # Replace with function body.

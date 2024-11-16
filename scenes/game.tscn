@@ -1,6 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8bwubo2vtsk0"]
+[gd_scene load_steps=12 format=3 uid="uid://c8bwubo2vtsk0"]
 
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_275qk"]
 [ext_resource type="PackedScene" uid="uid://tsykp01oiwls" path="res://scenes/player.tscn" id="1_pxsnt"]
+[ext_resource type="Texture2D" uid="uid://iw5q511gakl7" path="res://platform.png" id="2_h8vkd"]
+[ext_resource type="Texture2D" uid="uid://bc8pv4rkbnxod" path="res://background.png" id="4_61w0a"]
 
 [sub_resource type="Animation" id="Animation_tsnyx"]
 length = 0.001
@@ -56,15 +59,32 @@ _data = {
 "fadeoutcolor": SubResource("Animation_xx6uo")
 }
 
-[sub_resource type="QuadMesh" id="QuadMesh_mkmpt"]
-size = Vector2(500, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo11t"]
+size = Vector2(1200, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_488fx"]
-size = Vector2(500, 40)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_30ixt"]
+normal = Vector2(0, 1)
+distance = 0.01
 
-[node name="level1" type="Node2D"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2682b"]
+normal = Vector2(1, 0)
+distance = 0.01
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_275qk")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(9000, 9000)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-61, -1520)
+texture = ExtResource("4_61w0a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -84,17 +104,34 @@ libraries = {
 }
 
 [node name="Player" parent="." instance=ExtResource("1_pxsnt")]
-position = Vector2(294, 136)
+position = Vector2(-50, 150)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(465, 523)
+[node name="Floor 1" type="StaticBody2D" parent="."]
+position = Vector2(-100, 500)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground"]
-mesh = SubResource("QuadMesh_mkmpt")
+[node name="NinePatchRect" type="NinePatchRect" parent="Floor 1"]
+offset_right = 1200.0
+offset_bottom = 40.0
+texture = ExtResource("2_h8vkd")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-shape = SubResource("RectangleShape2D_488fx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1"]
+position = Vector2(600, 20)
+shape = SubResource("RectangleShape2D_eo11t")
+
+[node name="World Boundary" type="StaticBody2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="World Boundary"]
+position = Vector2(285, -212)
+shape = SubResource("WorldBoundaryShape2D_30ixt")
+
+[node name="Left" type="CollisionShape2D" parent="World Boundary"]
+position = Vector2(-303, 209)
+shape = SubResource("WorldBoundaryShape2D_2682b")
