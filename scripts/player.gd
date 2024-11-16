@@ -17,7 +17,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		$Jump.play()
 		velocity.y = JUMP_VELOCITY
-	if Input.is_action_just_pressed("down"):
+	if Input.is_action_just_pressed("down") and not is_on_floor():
 		$Down.play()
 		velocity.y = -JUMP_VELOCITY
 
