@@ -8,4 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if $Player.position[1]>2000:
+		$Player.position = Vector2(-50, 150)
+		$Player.velocity.y = 0
