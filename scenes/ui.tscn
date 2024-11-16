@@ -181,7 +181,11 @@ text = "Credits"
 [node name="Label2" type="Label" parent="Credits/VBoxContainer"]
 layout_mode = 2
 text = "- Made in Godot, an amazing FOSS game engine
-- Pixilart, for the graphics"
+- Pixilart, for the graphics (or all the ones that are pixel art)
+- Music made with Google's MusicFX
+- Sound effects from Google's Material Sound resources
+- I (Ingo) coded the game
+- You played the game"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Credits"]
 layout_mode = 1
