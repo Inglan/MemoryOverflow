@@ -34,3 +34,9 @@ func play():
 
 func animationfinished(anim_name):
 	pass # Replace with function body.
+
+
+func showlicences():
+	$"Sound/navigation_forward-selection-minimal".play()
+	$Camera2D.position.y = $Licences.position.y
+	$Camera2D.position.x = $Licences.position.x
