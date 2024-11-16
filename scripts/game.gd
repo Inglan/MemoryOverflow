@@ -8,6 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if $Player.position[1]>2000:
-		$Player.position = Vector2(-50, 150)
+	if $Player.position[1]>1000:
+		$Player.velocity.y += $Player.gravity * delta * 5
+	if $Player.position[1]>3000:
+		$Player.position = Vector2(-50, -1000)
 		$Player.velocity.y = 0
