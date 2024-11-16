@@ -15,8 +15,10 @@ func _physics_process(delta):
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("up") and is_on_floor():
+		$Jump.play()
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("down"):
+		$Down.play()
 		velocity.y = -JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
