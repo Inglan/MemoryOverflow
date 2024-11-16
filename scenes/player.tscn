@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://tsykp01oiwls"]
+[gd_scene load_steps=7 format=3 uid="uid://tsykp01oiwls"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_mxd6f"]
 [ext_resource type="Texture2D" uid="uid://imet62ds4n6d" path="res://player.png" id="2_u15x6"]
 [ext_resource type="AudioStream" uid="uid://dnf2ugmbtywek" path="res://sound/material/03 Primary System Sounds/navigation_forward-selection-minimal.wav" id="3_r0i4r"]
 [ext_resource type="AudioStream" uid="uid://babeie4nxcb1" path="res://sound/material/04 Secondary System Sounds/navigation-cancel.wav" id="4_7wt14"]
+[ext_resource type="AudioStream" uid="uid://2iow86f7ww60" path="res://sound/material/03 Primary System Sounds/navigation_hover-tap.wav" id="5_v6y14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_026pf"]
 size = Vector2(44, 44)
@@ -26,3 +27,6 @@ stream = ExtResource("3_r0i4r")
 
 [node name="Down" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_7wt14")
+
+[node name="Land" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_v6y14")
