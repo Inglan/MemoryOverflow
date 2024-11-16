@@ -1,8 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://da3d4w5uvy10x"]
+[gd_scene load_steps=6 format=3 uid="uid://da3d4w5uvy10x"]
 
 [ext_resource type="AudioStream" uid="uid://be2rk7jt7n0r5" path="res://sound/background.wav" id="1_1ak1f"]
+[ext_resource type="Script" path="res://scripts/audio.gd" id="2_dhviw"]
+
+[sub_resource type="Animation" id="Animation_1gl12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+
+[sub_resource type="Animation" id="Animation_mgraq"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.3, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -10.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qj3bh"]
+_data = {
+"RESET": SubResource("Animation_1gl12"),
+"fade_in": SubResource("Animation_mgraq")
+}
 
 [node name="audio" type="AudioStreamPlayer"]
 stream = ExtResource("1_1ak1f")
 volume_db = -10.0
-autoplay = true
+script = ExtResource("2_dhviw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_qj3bh")
+}
