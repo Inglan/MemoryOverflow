@@ -1,7 +1,7 @@
 extends Node2D
 
-var ram = 10
-var ramusage = 0
+var rambytes = float(10000)
+var ramusagebytes = float(0)
 var fading = false
 
 # Called when the node enters the scene tree for the first time.
@@ -11,9 +11,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$CanvasLayer/VBoxContainer/HBoxContainer/Label2.text = str(ramusagebytes/1000) + "/" + str(rambytes/1000) + "MB"
+	$CanvasLayer/VBoxContainer/ProgressBar.value = ((float(ramusagebytes)/float(rambytes))*float(100))
+
+
+	if RandomNumberGenerator.new().randi_range(0, 10) == 1:
+		ramusagebytes = ramusagebytes + 10
+
 	if $Player.position[1]>1000:
 		$Player.velocity.y += $Player.gravity * delta * 5
-		
+
 		if not fading:
 			fading = true
 			$CanvasLayer/ColorRect/AnimationPlayer.play("fadeincolor")
@@ -23,3 +30,8 @@ func _process(delta):
 		$Player.velocity.y = 0
 		fading = false
 		$CanvasLayer/ColorRect/AnimationPlayer.play("fadeoutcolor")
+	
+	if Input.is_action_pressed("left") or Input.is_action_pressed("right") or Input.is_action_pressed("up") or Input.is_action_pressed("down"):
+		ramusagebytes = ramusagebytes + 50
+		print(ramusagebytes)
+	
