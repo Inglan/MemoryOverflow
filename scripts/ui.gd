@@ -43,3 +43,8 @@ func showlicences():
 
 func tabchanged(tab):
 	$"Sound/navigation_forward-selection-minimal".play()
+
+
+func volumechanged(value):
+	$Title/VBoxContainer/HBoxContainer2/Label.text = str(value) + "%"
+	backgroundmusic.volume_db = linear_to_db(value/100)

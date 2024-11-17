@@ -129,6 +129,17 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "HOW TO"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="Title/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="Title/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Title/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "100%"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Title"]
 layout_mode = 1
 anchors_preset = 3
@@ -285,7 +296,6 @@ text = "Open Source Licences"
 layout_mode = 2
 
 [node name="Material Sound Resources" type="TextEdit" parent="Licences/VBoxContainer/TabContainer"]
-visible = false
 custom_minimum_size = Vector2(700, 400)
 layout_mode = 2
 text = "## Attribution 4.0 International
@@ -388,6 +398,7 @@ editable = false
 wrap_mode = 1
 
 [node name="Inter" type="TextEdit" parent="Licences/VBoxContainer/TabContainer"]
+visible = false
 custom_minimum_size = Vector2(700, 400)
 layout_mode = 2
 text = "Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
@@ -466,6 +477,7 @@ volume_db = 20.0
 
 [connection signal="pressed" from="Title/VBoxContainer/HBoxContainer/Button" to="." method="play"]
 [connection signal="pressed" from="Title/VBoxContainer/HBoxContainer/Button2" to="." method="showhowto"]
+[connection signal="value_changed" from="Title/VBoxContainer/HBoxContainer2/HSlider" to="." method="volumechanged"]
 [connection signal="pressed" from="Title/HBoxContainer/Button" to="." method="showcredits"]
 [connection signal="pressed" from="Credits/VBoxContainer/Button" to="." method="showlicences"]
 [connection signal="pressed" from="Credits/HBoxContainer/Button" to="." method="back"]
