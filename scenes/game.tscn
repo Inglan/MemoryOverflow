@@ -132,5 +132,5 @@ position = Vector2(285, -212)
 shape = SubResource("WorldBoundaryShape2D_30ixt")
 
 [node name="Left" type="CollisionShape2D" parent="World Boundary"]
-position = Vector2(-303, 209)
+position = Vector2(-659, 192)
 shape = SubResource("WorldBoundaryShape2D_2682b")
