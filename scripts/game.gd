@@ -1,5 +1,7 @@
 extends Node2D
 
+var ram = 10
+var ramusage = 0
 var fading = false
 
 # Called when the node enters the scene tree for the first time.
