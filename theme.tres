@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://du8oaaj8cjcxb"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://du8oaaj8cjcxb"]
 
 [ext_resource type="FontFile" uid="uid://6g7um1mv7nbq" path="res://Inter/static/Inter_18pt-Light.ttf" id="1_shgt4"]
+[ext_resource type="Texture2D" uid="uid://imet62ds4n6d" path="res://player.png" id="2_abuwj"]
+[ext_resource type="Texture2D" uid="uid://iw5q511gakl7" path="res://platform.png" id="3_0ouj7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1t6y"]
 bg_color = Color(0, 0, 0, 1)
@@ -34,6 +36,13 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svpkv"]
+texture = ExtResource("3_0ouj7")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
 [resource]
 Button/fonts/font = ExtResource("1_shgt4")
 Button/styles/disabled = SubResource("StyleBoxFlat_h1t6y")
@@ -41,6 +50,12 @@ Button/styles/focus = SubResource("StyleBoxFlat_q11pw")
 Button/styles/hover = SubResource("StyleBoxFlat_yurmc")
 Button/styles/normal = SubResource("StyleBoxFlat_dq1sj")
 Button/styles/pressed = SubResource("StyleBoxFlat_vvm2r")
+HSlider/icons/grabber = ExtResource("2_abuwj")
+HSlider/icons/grabber_disabled = ExtResource("2_abuwj")
+HSlider/icons/grabber_highlight = ExtResource("2_abuwj")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_svpkv")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_svpkv")
+HSlider/styles/slider = SubResource("StyleBoxTexture_svpkv")
 Label/fonts/font = ExtResource("1_shgt4")
 LineEdit/fonts/font = ExtResource("1_shgt4")
 TabBar/fonts/font = ExtResource("1_shgt4")
