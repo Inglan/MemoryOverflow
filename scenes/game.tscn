@@ -86,6 +86,7 @@ texture = ExtResource("4_61w0a")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -109,10 +110,12 @@ position = Vector2(-50, 150)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
-[node name="Floor 1" type="StaticBody2D" parent="."]
+[node name="Floors" type="Node" parent="."]
+
+[node name="Floor 1" type="StaticBody2D" parent="Floors"]
 position = Vector2(-100, 500)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Floor 1"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Floors/Floor 1"]
 offset_right = 1200.0
 offset_bottom = 40.0
 texture = ExtResource("2_h8vkd")
@@ -121,9 +124,51 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor 1"]
 position = Vector2(600, 20)
 shape = SubResource("RectangleShape2D_eo11t")
+
+[node name="Floor 2" type="StaticBody2D" parent="Floors"]
+position = Vector2(1249, 696)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Floors/Floor 2"]
+offset_right = 1200.0
+offset_bottom = 40.0
+texture = ExtResource("2_h8vkd")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor 2"]
+position = Vector2(600, 20)
+shape = SubResource("RectangleShape2D_eo11t")
+
+[node name="Overlays" type="Node" parent="."]
+
+[node name="Label 1" type="Label" parent="Overlays"]
+offset_left = -256.0
+offset_top = 303.0
+offset_right = 408.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 30
+text = "Hello there! I hope you read the instructions :)"
+
+[node name="Label 2" type="Label" parent="Overlays"]
+offset_left = 960.0
+offset_top = 231.0
+offset_right = 1401.0
+offset_bottom = 276.0
+theme_override_font_sizes/font_size = 30
+text = "Wow a jump! Can you make it?"
+
+[node name="Label 3" type="Label" parent="Overlays"]
+offset_left = 1981.0
+offset_top = 470.0
+offset_right = 2115.0
+offset_bottom = 515.0
+theme_override_font_sizes/font_size = 30
+text = "Great job!"
 
 [node name="World Boundary" type="StaticBody2D" parent="."]
 
