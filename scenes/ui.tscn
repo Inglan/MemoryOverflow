@@ -248,9 +248,117 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "How To Play"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="HowTo/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+text = "This is a simple platformer game BUT...
+The developers didn't care about memory efficiency and this game is FULL of memory leaks.
+This means the game will CRASH very frequently.
+There is only one way to stop this... collect ram.
+You can play with the usual WASD keys or arrow keys.
+There will be random ram sticks around the place for you to collect.
+
+Good luck :)"
+
 [node name="Label2" type="Label" parent="HowTo/VBoxContainer"]
 layout_mode = 2
-text = "TODO - ADD INSTRUCTIONS"
+theme_override_font_sizes/font_size = 30
+text = "Controls"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HowTo/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HowTo/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Button" type="Button" parent="HowTo/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "W"
+
+[node name="Button2" type="Button" parent="HowTo/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "⬆️"
+
+[node name="Label" type="Label" parent="HowTo/VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Jump"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HowTo/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Button" type="Button" parent="HowTo/VBoxContainer/HBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "A"
+
+[node name="Button2" type="Button" parent="HowTo/VBoxContainer/HBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "⬅️"
+
+[node name="Label" type="Label" parent="HowTo/VBoxContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Left"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="HowTo/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Button" type="Button" parent="HowTo/VBoxContainer/HBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "Esc"
+
+[node name="Label" type="Label" parent="HowTo/VBoxContainer/HBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Pause"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HowTo/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HowTo/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Button" type="Button" parent="HowTo/VBoxContainer/HBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "S"
+
+[node name="Button2" type="Button" parent="HowTo/VBoxContainer/HBoxContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "➡️"
+
+[node name="Label" type="Label" parent="HowTo/VBoxContainer/HBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+text = "Right"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HowTo/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Button" type="Button" parent="HowTo/VBoxContainer/HBoxContainer2/HBoxContainer4"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "D"
+
+[node name="Button2" type="Button" parent="HowTo/VBoxContainer/HBoxContainer2/HBoxContainer4"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "⬇️"
+
+[node name="Label" type="Label" parent="HowTo/VBoxContainer/HBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+text = "Down"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HowTo"]
 layout_mode = 1
