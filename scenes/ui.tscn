@@ -135,6 +135,7 @@ layout_mode = 2
 [node name="HSlider" type="HSlider" parent="Title/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+value = 100.0
 
 [node name="Label" type="Label" parent="Title/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
