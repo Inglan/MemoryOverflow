@@ -84,7 +84,6 @@ position = Vector2(-61, -1520)
 texture = ExtResource("4_61w0a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
