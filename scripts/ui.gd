@@ -35,10 +35,6 @@ func play():
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
-func animationfinished(anim_name):
-	pass # Replace with function body.
-
-
 func showlicences():
 	$"Sound/navigation_forward-selection-minimal".play()
 	$Camera2D.position.y = $Licences.position.y
