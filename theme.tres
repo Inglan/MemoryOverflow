@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://du8oaaj8cjcxb"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://du8oaaj8cjcxb"]
 
 [ext_resource type="FontFile" uid="uid://6g7um1mv7nbq" path="res://Inter/static/Inter_18pt-Light.ttf" id="1_shgt4"]
 [ext_resource type="Texture2D" uid="uid://imet62ds4n6d" path="res://player.png" id="2_abuwj"]
@@ -43,6 +43,20 @@ texture_margin_top = 8.0
 texture_margin_right = 8.0
 texture_margin_bottom = 8.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xy0rs"]
+texture = ExtResource("3_0ouj7")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75575"]
+texture = ExtResource("2_abuwj")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
 [resource]
 Button/fonts/font = ExtResource("1_shgt4")
 Button/styles/disabled = SubResource("StyleBoxFlat_h1t6y")
@@ -58,4 +72,9 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_svpkv")
 HSlider/styles/slider = SubResource("StyleBoxTexture_svpkv")
 Label/fonts/font = ExtResource("1_shgt4")
 LineEdit/fonts/font = ExtResource("1_shgt4")
+ProgressBar/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/colors/font_outline_color = Color(1, 1, 1, 1)
+ProgressBar/constants/outline_size = 6
+ProgressBar/styles/background = SubResource("StyleBoxTexture_xy0rs")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_75575")
 TabBar/fonts/font = ExtResource("1_shgt4")
