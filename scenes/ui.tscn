@@ -388,7 +388,6 @@ editable = false
 wrap_mode = 1
 
 [node name="Inter" type="TextEdit" parent="Licences/VBoxContainer/TabContainer"]
-visible = false
 custom_minimum_size = Vector2(700, 400)
 layout_mode = 2
 text = "Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
