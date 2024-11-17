@@ -71,6 +71,7 @@ theme = ExtResource("1_ei2l2")
 script = ExtResource("3_bncij")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -588,6 +589,8 @@ volume_db = 20.0
 
 [connection signal="pressed" from="Title/VBoxContainer/HBoxContainer/Button" to="." method="play"]
 [connection signal="pressed" from="Title/VBoxContainer/HBoxContainer/Button2" to="." method="showhowto"]
+[connection signal="mouse_entered" from="Title/VBoxContainer/HBoxContainer2/HSlider" to="." method="sliderhover"]
+[connection signal="mouse_exited" from="Title/VBoxContainer/HBoxContainer2/HSlider" to="." method="sliderunhover"]
 [connection signal="value_changed" from="Title/VBoxContainer/HBoxContainer2/HSlider" to="." method="volumechanged"]
 [connection signal="pressed" from="Title/HBoxContainer/Button" to="." method="showcredits"]
 [connection signal="pressed" from="Credits/VBoxContainer/Button" to="." method="showlicences"]
