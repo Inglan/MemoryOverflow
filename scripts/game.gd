@@ -2,6 +2,7 @@ extends Node2D
 
 var rambytes = float(10000)
 var ramusagebytes = float(0)
+var usagepercent = float(0)
 var fading = false
 
 # Called when the node enters the scene tree for the first time.
@@ -11,9 +12,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	usagepercent = ((float(ramusagebytes)/float(rambytes))*float(100))
+	
 	$CanvasLayer/VBoxContainer/HBoxContainer/Label2.text = str(ramusagebytes/1000) + "/" + str(rambytes/1000) + "MB"
-	$CanvasLayer/VBoxContainer/ProgressBar.value = ((float(ramusagebytes)/float(rambytes))*float(100))
-
+	$CanvasLayer/VBoxContainer/ProgressBar.value = usagepercent
+	
+	if usagepercent > 90:
+		$CanvasLayer/ScreenShake.material.set_shader_parameter("ShakeStrength", 0.2)
+	else: 
+		$CanvasLayer/ScreenShake.material.set_shader_parameter("ShakeStrength", 0)
 
 	if RandomNumberGenerator.new().randi_range(0, 10) == 1:
 		ramusagebytes = ramusagebytes + 10

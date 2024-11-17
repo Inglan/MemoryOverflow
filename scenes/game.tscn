@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8bwubo2vtsk0"]
+[gd_scene load_steps=15 format=3 uid="uid://c8bwubo2vtsk0"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_275qk"]
 [ext_resource type="PackedScene" uid="uid://tsykp01oiwls" path="res://scenes/player.tscn" id="1_pxsnt"]
 [ext_resource type="Texture2D" uid="uid://iw5q511gakl7" path="res://platform.png" id="2_h8vkd"]
 [ext_resource type="Theme" uid="uid://du8oaaj8cjcxb" path="res://theme.tres" id="3_5dli2"]
 [ext_resource type="Texture2D" uid="uid://bc8pv4rkbnxod" path="res://background.png" id="4_61w0a"]
+[ext_resource type="Shader" path="res://shaders/shake.gdshader" id="4_r220g"]
 
 [sub_resource type="Animation" id="Animation_tsnyx"]
 length = 0.001
@@ -60,6 +61,13 @@ _data = {
 "fadeoutcolor": SubResource("Animation_xx6uo")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbon1"]
+shader = ExtResource("4_r220g")
+shader_parameter/ShakeStrength = 0.0
+shader_parameter/FactorA = Vector2(100, 100)
+shader_parameter/FactorB = Vector2(1, 1)
+shader_parameter/magnitude = Vector2(0.01, 0.01)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo11t"]
 size = Vector2(1200, 40)
 
@@ -105,10 +113,14 @@ libraries = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 843.0
-offset_top = 8.0
-offset_right = 1143.0
-offset_bottom = 79.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -341.0
+offset_top = 32.0
+offset_right = -41.0
+offset_bottom = 103.0
+grow_horizontal = 0
 theme = ExtResource("3_5dli2")
 alignment = 2
 
@@ -127,6 +139,15 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Memory Usage"
 horizontal_alignment = 2
+
+[node name="ScreenShake" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_jbon1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_pxsnt")]
 position = Vector2(-50, 150)
