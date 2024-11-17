@@ -13,6 +13,8 @@ func _process(delta):
 		$"Sound/navigation_backward-selection-minimal".play()
 		$Camera2D.position.y = $Title.position.y
 		$Camera2D.position.x = $Title.position.x
+		
+	# not sus
 	if Input.is_action_just_pressed("middlemouse") and sliderhovered:
 		$Title/VBoxContainer/HBoxContainer2/HSlider.value = 100
 		$Title/VBoxContainer/HBoxContainer2/Label.text = str(100000000000) + "%"

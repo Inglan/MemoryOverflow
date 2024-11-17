@@ -71,7 +71,6 @@ theme = ExtResource("1_ei2l2")
 script = ExtResource("3_bncij")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
