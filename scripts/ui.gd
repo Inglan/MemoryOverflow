@@ -40,3 +40,7 @@ func showlicences():
 	$"Sound/navigation_forward-selection-minimal".play()
 	$Camera2D.position.y = $Licences.position.y
 	$Camera2D.position.x = $Licences.position.x
+
+
+func tabchanged(tab):
+	$"Sound/navigation_forward-selection-minimal".play()
