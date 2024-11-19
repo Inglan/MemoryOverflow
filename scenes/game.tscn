@@ -7,6 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://bc8pv4rkbnxod" path="res://background.png" id="4_61w0a"]
 [ext_resource type="Shader" path="res://shaders/shake.gdshader" id="4_r220g"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbon1"]
+shader = ExtResource("4_r220g")
+shader_parameter/ShakeStrength = 0.0
+shader_parameter/FactorA = Vector2(100, 100)
+shader_parameter/FactorB = Vector2(1, 1)
+shader_parameter/magnitude = Vector2(0.01, 0.01)
+
 [sub_resource type="Animation" id="Animation_tsnyx"]
 length = 0.001
 tracks/0/type = "value"
@@ -61,13 +68,6 @@ _data = {
 "fadeoutcolor": SubResource("Animation_xx6uo")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbon1"]
-shader = ExtResource("4_r220g")
-shader_parameter/ShakeStrength = 0.0
-shader_parameter/FactorA = Vector2(100, 100)
-shader_parameter/FactorB = Vector2(1, 1)
-shader_parameter/magnitude = Vector2(0.01, 0.01)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo11t"]
 size = Vector2(1200, 40)
 
@@ -93,23 +93,6 @@ position = Vector2(-61, -1520)
 texture = ExtResource("4_61w0a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
-root_node = NodePath("../..")
-autoplay = "fadeoutcolor"
-libraries = {
-"": SubResource("AnimationLibrary_vvxqf")
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 1
@@ -147,6 +130,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
+root_node = NodePath("../..")
+autoplay = "fadeoutcolor"
+libraries = {
+"": SubResource("AnimationLibrary_vvxqf")
+}
 
 [node name="Player" parent="." instance=ExtResource("1_pxsnt")]
 position = Vector2(-50, 150)
