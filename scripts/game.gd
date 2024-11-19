@@ -41,7 +41,3 @@ func _process(delta):
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right") or Input.is_action_pressed("up") or Input.is_action_pressed("down"):
 		ramusagebytes = ramusagebytes + 50
 		print(ramusagebytes)
-	
-	if Input.is_action_just_pressed("esc"):
-		var tween = get_tree().create_tween()
-		tween.tween_property($Player/Camera2D, "zoom", Vector2(0.5, 0.5), 0.8).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
