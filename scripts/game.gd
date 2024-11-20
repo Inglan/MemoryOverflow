@@ -33,13 +33,14 @@ func _process(delta):
 			$CanvasLayer/ColorRect/AnimationPlayer.play("fadeincolor")
 		
 	if $Player.position[1]>3000:
-		$Player.position = Vector2(-50, -1000)
+		var y = $Player.position[0]
+		$Player.position = Vector2(y-100, -50)
 		$Player.velocity.y = 0
 		fading = false
 		$CanvasLayer/ColorRect/AnimationPlayer.play("fadeoutcolor")
 	
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right") or Input.is_action_pressed("up") or Input.is_action_pressed("down"):
-		ramcounter.ramusagebytes = ramcounter.ramusagebytes + 50
+		ramcounter.ramusagebytes = ramcounter.ramusagebytes + 40
 		print(ramcounter.ramusagebytes)
 
 	if Input.is_action_just_pressed("esc"):
