@@ -46,7 +46,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("esc"):
 		get_tree().paused=true
 		$CanvasLayer/PauseMenu.visible = true
-
+	
+	if ramcounter.usagepercent > 100:
+		get_tree().quit()
 
 func resume():
 	get_tree().paused=false
