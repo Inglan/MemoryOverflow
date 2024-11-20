@@ -41,3 +41,17 @@ func _process(delta):
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right") or Input.is_action_pressed("up") or Input.is_action_pressed("down"):
 		ramusagebytes = ramusagebytes + 50
 		print(ramusagebytes)
+
+	if Input.is_action_just_pressed("esc"):
+		get_tree().paused=true
+		$CanvasLayer/PauseMenu.visible = true
+
+
+func resume():
+	get_tree().paused=false
+	$CanvasLayer/PauseMenu.visible = false
+
+
+func exit():
+	get_tree().change_scene_to_file("res://scenes/ui.tscn")
+	get_tree().reload_current_scene()
