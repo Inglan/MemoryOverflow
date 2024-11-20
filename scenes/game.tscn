@@ -346,6 +346,14 @@ offset_bottom = 797.0
 theme_override_font_sizes/font_size = 30
 text = "Bet you cant find the next platform :)"
 
+[node name="Label 7" type="Label" parent="Overlays"]
+offset_left = 3520.0
+offset_top = 2570.0
+offset_right = 3903.0
+offset_bottom = 2615.0
+theme_override_font_sizes/font_size = 30
+text = "More levels coming soon :)"
+
 [node name="World Boundary" type="StaticBody2D" parent="."]
 
 [node name="Top" type="CollisionShape2D" parent="World Boundary"]
