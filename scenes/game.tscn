@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8bwubo2vtsk0"]
+[gd_scene load_steps=20 format=3 uid="uid://c8bwubo2vtsk0"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_275qk"]
 [ext_resource type="PackedScene" uid="uid://tsykp01oiwls" path="res://scenes/player.tscn" id="1_pxsnt"]
@@ -75,8 +75,14 @@ size = Vector2(808, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vojap"]
 size = Vector2(1200, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3s7r"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ici0"]
+size = Vector2(1197.83, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8wld"]
 size = Vector2(1200, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omtks"]
+size = Vector2(185, 40)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_30ixt"]
 normal = Vector2(0, 1)
@@ -253,8 +259,41 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor 3"]
-position = Vector2(598.386, 19.8898)
-shape = SubResource("RectangleShape2D_h3s7r")
+position = Vector2(599.483, 19.7207)
+shape = SubResource("RectangleShape2D_7ici0")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Floor 4" type="StaticBody2D" parent="Floors"]
+position = Vector2(3482, 933)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Floors/Floor 4"]
+offset_right = 1200.0
+offset_bottom = 40.0
+texture = ExtResource("2_h8vkd")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor 4"]
+position = Vector2(599, 20)
+shape = SubResource("RectangleShape2D_w8wld")
+
+[node name="Floor 5" type="StaticBody2D" parent="Floors"]
+position = Vector2(3714, 2717)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Floors/Floor 5"]
+offset_right = 185.0
+offset_bottom = 40.0
+texture = ExtResource("2_h8vkd")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor 5"]
+position = Vector2(92.5, 20)
+shape = SubResource("RectangleShape2D_omtks")
 
 [node name="Overlays" type="Node" parent="."]
 
@@ -291,6 +330,22 @@ rotation = -0.783653
 theme_override_font_sizes/font_size = 30
 text = "I wonder how godot handles this :)"
 
+[node name="Label 5" type="Label" parent="Overlays"]
+offset_left = 3341.0
+offset_top = -346.0
+offset_right = 3665.0
+offset_bottom = -301.0
+theme_override_font_sizes/font_size = 30
+text = "Guess it kinda works..."
+
+[node name="Label 6" type="Label" parent="Overlays"]
+offset_left = 4380.0
+offset_top = 752.0
+offset_right = 4704.0
+offset_bottom = 797.0
+theme_override_font_sizes/font_size = 30
+text = "Bet you cant find the next platform :)"
+
 [node name="World Boundary" type="StaticBody2D" parent="."]
 
 [node name="Top" type="CollisionShape2D" parent="World Boundary"]
@@ -303,6 +358,15 @@ shape = SubResource("WorldBoundaryShape2D_2682b")
 
 [node name="ram" parent="." instance=ExtResource("7_i80mw")]
 position = Vector2(1854, 648)
+
+[node name="ram2" parent="." instance=ExtResource("7_i80mw")]
+position = Vector2(3254, -156)
+
+[node name="ram3" parent="." instance=ExtResource("7_i80mw")]
+position = Vector2(4119, 897)
+
+[node name="ram4" parent="." instance=ExtResource("7_i80mw")]
+position = Vector2(3806, 2694)
 
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Button" to="." method="resume"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Button2" to="." method="exit"]
