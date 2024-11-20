@@ -40,7 +40,7 @@ func _process(delta):
 		$CanvasLayer/ColorRect/AnimationPlayer.play("fadeoutcolor")
 	
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right") or Input.is_action_pressed("up") or Input.is_action_pressed("down"):
-		ramcounter.ramusagebytes = ramcounter.ramusagebytes + 50
+		ramcounter.ramusagebytes = ramcounter.ramusagebytes + 40
 		print(ramcounter.ramusagebytes)
 
 	if Input.is_action_just_pressed("esc"):
