@@ -117,6 +117,12 @@ layout_mode = 2
 texture = ExtResource("2_f8g5c")
 expand_mode = 5
 
+[node name="Label" type="Label" parent="Title/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "BETA"
+horizontal_alignment = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Title/VBoxContainer"]
 layout_mode = 2
 
