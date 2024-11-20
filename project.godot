@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 backgroundmusic="*res://scenes/audio.tscn"
+ramcounter="*res://scripts/ramcounter.gd"
 
 [editor_plugins]
 
