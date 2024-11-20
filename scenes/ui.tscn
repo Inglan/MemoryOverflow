@@ -71,6 +71,7 @@ theme = ExtResource("1_ei2l2")
 script = ExtResource("3_bncij")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -569,6 +570,26 @@ grow_vertical = 0
 [node name="Button" type="Button" parent="Licences/HBoxContainer"]
 layout_mode = 2
 text = " Back "
+
+[node name="Loading" type="Control" parent="."]
+layout_mode = 1
+anchor_top = -1.002
+anchor_right = 1.0
+anchor_bottom = -0.002
+offset_top = 0.296082
+offset_bottom = 0.296
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Loading"]
+layout_mode = 2
+offset_left = 332.5
+offset_top = 286.5
+offset_right = 819.5
+offset_bottom = 327.5
+theme_override_font_sizes/font_size = 30
+text = "Loading"
+horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

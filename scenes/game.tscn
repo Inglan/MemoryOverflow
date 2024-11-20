@@ -148,6 +148,48 @@ libraries = {
 "": SubResource("AnimationLibrary_vvxqf")
 }
 
+[node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
+process_mode = 2
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -210.0
+offset_right = 180.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -182.0
+offset_right = 135.0
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_5dli2")
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Resume"
+
+[node name="Button2" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit"
+
 [node name="Player" parent="." instance=ExtResource("1_pxsnt")]
 position = Vector2(-50, 150)
 
@@ -224,3 +266,6 @@ shape = SubResource("WorldBoundaryShape2D_30ixt")
 [node name="Left" type="CollisionShape2D" parent="World Boundary"]
 position = Vector2(-659, 192)
 shape = SubResource("WorldBoundaryShape2D_2682b")
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Button" to="." method="resume"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/Button2" to="." method="exit"]
