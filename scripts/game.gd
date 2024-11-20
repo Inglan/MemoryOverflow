@@ -53,5 +53,5 @@ func resume():
 
 
 func exit():
+	queue_free()
 	get_tree().change_scene_to_file("res://scenes/ui.tscn")
-	get_tree().reload_current_scene()
