@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8bwubo2vtsk0"]
+[gd_scene load_steps=16 format=3 uid="uid://c8bwubo2vtsk0"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_275qk"]
 [ext_resource type="PackedScene" uid="uid://tsykp01oiwls" path="res://scenes/player.tscn" id="1_pxsnt"]
@@ -68,7 +68,10 @@ _data = {
 "fadeoutcolor": SubResource("Animation_xx6uo")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo11t"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8laj"]
+size = Vector2(808, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vojap"]
 size = Vector2(1200, 40)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_30ixt"]
@@ -93,6 +96,7 @@ position = Vector2(-61, -1520)
 texture = ExtResource("4_61w0a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 1
@@ -203,7 +207,7 @@ position_smoothing_speed = 3.0
 position = Vector2(-100, 500)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Floors/Floor 1"]
-offset_right = 1200.0
+offset_right = 808.0
 offset_bottom = 40.0
 texture = ExtResource("2_h8vkd")
 patch_margin_left = 4
@@ -212,8 +216,8 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor 1"]
-position = Vector2(600, 20)
-shape = SubResource("RectangleShape2D_eo11t")
+position = Vector2(404, 20)
+shape = SubResource("RectangleShape2D_v8laj")
 
 [node name="Floor 2" type="StaticBody2D" parent="Floors"]
 position = Vector2(1249, 696)
@@ -229,7 +233,7 @@ patch_margin_bottom = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/Floor 2"]
 position = Vector2(600, 20)
-shape = SubResource("RectangleShape2D_eo11t")
+shape = SubResource("RectangleShape2D_vojap")
 
 [node name="Overlays" type="Node" parent="."]
 
@@ -242,20 +246,20 @@ theme_override_font_sizes/font_size = 30
 text = "Hello there! I hope you read the instructions :)"
 
 [node name="Label 2" type="Label" parent="Overlays"]
-offset_left = 960.0
-offset_top = 231.0
-offset_right = 1401.0
-offset_bottom = 276.0
+offset_left = 645.0
+offset_top = 246.0
+offset_right = 1086.0
+offset_bottom = 291.0
 theme_override_font_sizes/font_size = 30
 text = "Wow a jump! Can you make it?"
 
 [node name="Label 3" type="Label" parent="Overlays"]
-offset_left = 1981.0
-offset_top = 470.0
-offset_right = 2115.0
-offset_bottom = 515.0
+offset_left = 1297.0
+offset_top = 413.0
+offset_right = 1439.0
+offset_bottom = 458.0
 theme_override_font_sizes/font_size = 30
-text = "Great job!"
+text = "Great job! Now get some RAM"
 
 [node name="World Boundary" type="StaticBody2D" parent="."]
 
