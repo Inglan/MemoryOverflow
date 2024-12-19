@@ -7,7 +7,7 @@ func _ready():
 	ramcounter.ramusagebytes = float(0)
 	ramcounter.usagepercent = float(0)
 
-func _process(delta):
+func _physics_process(delta: float) -> void:
 	ramcounter.usagepercent = ((float(ramcounter.ramusagebytes)/float(ramcounter.rambytes))*float(100))
 	
 	$CanvasLayer/VBoxContainer/HBoxContainer/Label2.text = str(ramcounter.ramusagebytes/1000) + "/" + str(ramcounter.rambytes/1000) + "MB"
