@@ -1,16 +1,12 @@
 extends Node2D
 
-
-
 var fading = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	ramcounter.rambytes = float(10000)
 	ramcounter.ramusagebytes = float(0)
 	ramcounter.usagepercent = float(0)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	ramcounter.usagepercent = ((float(ramcounter.ramusagebytes)/float(ramcounter.rambytes))*float(100))
 	
