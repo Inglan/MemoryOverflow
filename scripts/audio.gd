@@ -1,8 +1,8 @@
 extends AudioStreamPlayer
 
 func _ready():
-	$".".play()
+	self.play()
 
 func _process(_delta):
-	if not $".".playing:
-		$".".play()
+	if not self.playing:
+		self.play()
