@@ -92,8 +92,14 @@ distance = 0.01
 normal = Vector2(1, 0)
 distance = 0.01
 
-[node name="game" type="Node2D"]
+[node name="game" type="Node2D" node_paths=PackedStringArray("RamCounter_Label", "ProgressBarRam", "ScreenShake", "Player", "GameAnimationPlayer", "PauseMenu")]
 script = ExtResource("1_275qk")
+RamCounter_Label = NodePath("CanvasLayer/VBoxContainer/HBoxContainer/RamCounter")
+ProgressBarRam = NodePath("CanvasLayer/VBoxContainer/ProgressBar")
+ScreenShake = NodePath("CanvasLayer/ScreenShake")
+Player = NodePath("Player")
+GameAnimationPlayer = NodePath("CanvasLayer/ColorRect/AnimationPlayer")
+PauseMenu = NodePath("CanvasLayer/PauseMenu")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -125,11 +131,11 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+[node name="RamCounter" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+[node name="MemoryUsage" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Memory Usage"
@@ -157,7 +163,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect"]
 root_node = NodePath("../..")
-autoplay = "fadeoutcolor"
 libraries = {
 "": SubResource("AnimationLibrary_vvxqf")
 }
