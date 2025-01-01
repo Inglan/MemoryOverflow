@@ -1,0 +1,30 @@
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Godot
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
+          unzip Godot_*-stable_linux.x86_64.zip
+          mv Godot_*-stable_linux.x86_64 godot
+          chmod +x godot
+          rm Godot_*-stable_linux.x86_64.zip
+      - name: Download export templates
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/
+          mv templates/ ~/.local/share/godot/export_templates/4.3.stable/
+          rm Godot_*-stable_export_templates.tpz
+      - name: Create build folder
+        run: mkdir build
+      - name: Build
+        run: godot --headless --export-release "Web" ./project.godot
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: build/
