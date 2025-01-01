@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://logo-small.png"
 boot_splash/fullsize=false
-config/icon="res://icon.svg"
+config/icon="res://ram.png"
 
 [autoload]
 
