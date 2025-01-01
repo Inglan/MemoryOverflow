@@ -20,7 +20,7 @@ jobs:
           mv templates/ ~/.local/share/godot/export_templates/4.3.stable/
           rm Godot_*-stable_export_templates.tpz
       - name: Create build folder
-        run: mkdir build
+        run: mkdir -p build/web
       - name: Build
         run: godot --headless --export-release "Web" ./project.godot
       - name: Upload artifact
