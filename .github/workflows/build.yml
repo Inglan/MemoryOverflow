@@ -20,8 +20,9 @@ jobs:
           unzip Godot_*-stable_export_templates.tpz -d templates
           mv templates/ ~/.local/share/godot/export_templates/4.3.stable/
           rm Godot_*-stable_export_templates.tpz
+          ls ~/.local/share/godot/export_templates/4.3.stable/
       - name: Create build folder
-        run: mkdir -p build/web
+        run: mkdir -p build/web && ls ~/.local/share/godot/export_templates/4.3.stable/
       - name: Build
         run: ./godot --headless --export-release "Web" ./project.godot
       - name: Upload artifact
