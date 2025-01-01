@@ -17,9 +17,7 @@ jobs:
         run: |
           wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz > /dev/null
           mkdir -p ~/.local/share/godot/export_templates/
-          unzip Godot_*-stable_export_templates.tpz -d templates
-          mv templates/ 4.3.stable/
-          mv 4.3.stable/ ~/.local/share/godot/export_templates/
+          unzip Godot_*-stable_export_templates.tpz -d ~/.local/share/godot/export_templates/4.3.stable
           rm Godot_*-stable_export_templates.tpz
           ls ~/.local/share/godot/export_templates/
           ls ~/.local/share/godot/export_templates/4.3.stable/
