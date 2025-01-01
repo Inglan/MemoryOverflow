@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @export var SPEED = 690
 @export var JUMP_VELOCITY = -690
 

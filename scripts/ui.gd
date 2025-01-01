@@ -2,8 +2,7 @@ extends Control
 
 var sliderhovered = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("esc"):
 		$"Sound/navigation_backward-selection-minimal".play()
 		$Camera2D.position.y = $Title.position.y
@@ -41,9 +40,8 @@ func showlicences():
 	$Camera2D.position.x = $Licences.position.x
 
 
-func tabchanged(tab):
+func tabchanged(_tab):
 	$"Sound/navigation_forward-selection-minimal".play()
-
 
 func volumechanged(value):
 	$Title/VBoxContainer/HBoxContainer2/Label.text = str(value) + "%"
